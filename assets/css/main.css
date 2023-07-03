@@ -4095,3 +4095,16 @@ input, select, textarea {
 			opacity: 1;
 			visibility: visible;
 		}
+
+		.iframe-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		  }
+		  
+		  #myFrame {
+			width: 100%;
+			height: 100%;
+			border: none;
+		  }
