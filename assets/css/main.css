@@ -3876,7 +3876,7 @@ input, select, textarea {
 			}
 
 			#contact > .inner > .split > section > .contact-method {
-				box-sizing: border-box;
+				box-sizing: content-box;
 				position: relative;
 				display: flex;
 				flex-direction: column;
