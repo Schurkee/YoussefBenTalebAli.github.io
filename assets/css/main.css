@@ -153,7 +153,6 @@ input, select, textarea {
 		-webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-		border-bottom: dotted 1px;
 		color: inherit;
 		text-decoration: none;
 	}
@@ -2980,7 +2979,6 @@ input, select, textarea {
 					align-items: center; /* Vertically center .video-wrapper */
 					position: relative;
 					width: 100%;
-					overflow: hidden;
 				}
 				
 				.spotlights > section > .loop .bg-image {
@@ -2989,7 +2987,7 @@ input, select, textarea {
 					width: 100%;
 					height: 100%;
 					z-index: 0;
-					position: absolute;
+					background-size: cover;
 				}
 				
 				.spotlights > section > .loop .bg-image img {
@@ -3019,7 +3017,7 @@ input, select, textarea {
 					height: auto; /* Let the video's height adjust to maintain aspect ratio */
 					max-width: 100%; /* Ensure the video doesn't exceed the container width */
 					max-height: 100%; /* Ensure the video doesn't exceed the container height */
-					object-fit: contain; /* Scale the video to fit within the container */
+					object-fit: cover; /* Scale the video to fit within the container */
 					position: absolute;
 					top: 50%;
 					left: 50%;
@@ -3228,6 +3226,9 @@ input, select, textarea {
 				line-height: 1.65em;
 				margin-right: 0.325em;
 				padding: 0 0.125em 0 0.375em;
+				-moz-border-radius: 3px;
+				-webkit-border-radius: 3px;
+				border-radius: 3px;
 			}
 
 			#header .logo:hover strong {
@@ -3844,46 +3845,58 @@ input, select, textarea {
 	}
 
 		#contact > .inner {
-			display: -moz-flex;
-			display: -webkit-flex;
-			display: -ms-flex;
-			display: flex;
+			display: block;
 			padding: 0 !important;
 		}
 
 			#contact > .inner > :nth-child(2n - 1) {
-				padding: 4em 3em 2em 0 ;
+				padding: 0em 0em 0em 0 ;
 				/* border-right: solid 1px rgba(212, 212, 255, 0.1); */
-				width: 60%;
+				width: 100%;
 			}
 
 			#contact > .inner > :nth-child(2n) {
-				padding-left: 3em;
-				width: 40%;
+				display: none;
 			}
 
 			#contact > .inner > .split {
 				padding: 0;
+				display: flex;
+				flex-direction: column;
+				justify-self: center;
+				justify-content: center;
+			}
+			#contact > .inner > .split > section {
+				padding: 2.5em 0 2.5em 2.5em;
+				box-sizing: border-box;
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
 			}
 
-				#contact > .inner > .split > * {
-					padding: 3em 0 1em 3em ;
-					position: relative;
-				}
+			#contact > .inner > .split > section > * {
+				margin: 0 0 0 37%;
+				box-sizing: border-box;
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+			}
 
-					#contact > .inner > .split > *:before {
-						border-top: solid 1px rgba(212, 212, 255, 0.1);
-						content: '';
-						display: block;
-						margin-left: -50%;
-						position: absolute;
-						top: 0;
-						width: calc(200vw + 3em);
-					}
+			#contact > .inner > .split > *:before {
+				border-top: solid 1px rgba(212, 212, 255, 0.1);
+				content: '';
+				display: block;
+				margin-left: -50%;
+				position: absolute;
+				top: 0;
+				width: calc(200vw + 3em);
+			}
 
-				#contact > .inner > .split > :first-child:before {
-					display: none;
-				}
+			#contact > .inner > .split > :first-child:before {
+				display: none;
+			}
 
 		@media screen and (max-width: 980px) {
 
@@ -4170,8 +4183,17 @@ input, select, textarea {
 			visibility: visible;
 		}
 
-		.video-wrapper {position: relative; padding-bottom: 56.25%; /* 16:9 */  padding-top: 25px;}
-		.video-wrapper iframe {position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+		.video-wrapper {
+			position: relative;
+			padding-bottom: 56.25%; /* 16:9 */
+			padding-top: 25px;
+		}
+		.video-wrapper iframe {
+			position: absolute;
+			top: 0; left: 0;
+			width: 100%;
+			height: 100%;
+		}
 
 /* Slideshow container */
 .slideshow-wrapper {
