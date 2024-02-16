@@ -3881,7 +3881,6 @@ input, select, textarea {
 				display: flex;
 				flex-direction: column;
 				align-self: center;
-				width: 25%;
 			}
 
 			#contact > .inner > .split > section > .contact-method > * {
