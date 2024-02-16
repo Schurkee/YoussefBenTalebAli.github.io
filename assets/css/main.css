@@ -3863,8 +3863,8 @@ input, select, textarea {
 				padding: 0;
 				display: flex;
 				flex-direction: column;
-				justify-self: center;
-				justify-content: center;
+				justify-self: flex-start;
+				justify-content: flex-start;
 			}
 			#contact > .inner > .split > section {
 				padding: 2.5em 2.5em 2.5em 0;
@@ -3872,7 +3872,7 @@ input, select, textarea {
 				position: relative;
 				display: flex;
 				flex-direction: column;
-				align-items: center;
+				align-items: flex-start;
 			}
 
 			#contact > .inner > .split > section > .contact-method {
@@ -3880,7 +3880,7 @@ input, select, textarea {
 				position: relative;
 				display: flex;
 				flex-direction: column;
-				align-self: center;
+				align-self: flex-start;
 			}
 
 			#contact > .inner > .split > section > .contact-method > * {
