@@ -3867,21 +3867,28 @@ input, select, textarea {
 				justify-content: center;
 			}
 			#contact > .inner > .split > section {
-				padding: 2.5em 0 2.5em 2.5em;
+				padding: 2.5em 2.5em 2.5em 0;
 				box-sizing: border-box;
 				position: relative;
 				display: flex;
 				flex-direction: column;
-				align-items: flex-start;
+				align-items: center;
 			}
 
-			#contact > .inner > .split > section > * {
-				margin: 0 30% 0 30%;
+			#contact > .inner > .split > section > .contact-method {
 				box-sizing: border-box;
 				position: relative;
 				display: flex;
 				flex-direction: column;
-				align-items: flex-start;
+				align-self: center;
+				width: 25%;
+			}
+
+			#contact > .inner > .split > section > .contact-method > * {
+				box-sizing: border-box;
+				display: flex;
+				flex-direction: column;
+				align-self: flex-start;
 			}
 
 			#contact > .inner > .split > *:before {
